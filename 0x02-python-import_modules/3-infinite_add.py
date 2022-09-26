@@ -8,4 +8,4 @@ if __name__ == "__main__":
             sum += int(sys.argv[i])
         print("{}".format(sum))
     else:
-        print("{}".format(sum)) 
+        print("{}".format(sum))
