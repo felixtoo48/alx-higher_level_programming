@@ -8,7 +8,7 @@ Define class square
 class Rectangle:
     """Define a rectangle class"""
 
-    def __init__(self, width="0", height="0"):
+    def __init__(self, width=0, height=0):
         """ Initialize a rectangle.
 
         Args:
@@ -25,14 +25,11 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
-        try:
-            if str(value).isdigit():
-                self.__width = value
-        except (TypeError, ValueError):
-            if TypeError:
-                print("width must be an integer")
-            if ValueError:
-                print("width must be >= 0")
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        if value < 0:
+            raise ValueError("width must be >= 0")
+        self.__width = value
 
     @property
     def height(self):
@@ -41,11 +38,8 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
-        try:
-            if str(value).isdigit():
-                self.__height = value
-        except (TypeError, ValueError):
-            if TypeError:
-                print("height must be an integer")
-            if ValueError:
-                print("height must be >= 0")
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        if value < 0:
+            raise ValueError("height must be >= 0")
+        self.__height = value
