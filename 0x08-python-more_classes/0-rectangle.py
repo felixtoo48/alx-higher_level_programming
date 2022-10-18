@@ -8,4 +8,3 @@ Define class square
 class Rectangle:
     """Empty class"""
     pass
-
