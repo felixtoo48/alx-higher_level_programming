@@ -54,8 +54,11 @@ class Rectangle:
             return (2 * (self.width + self.height))
 
     def __str__(self):
+        """ return printed representation of Rectangle
+
+        Rectangle is printed with # character.
+        """
         if self.width == 0 or self.height == 0:
             return ("")
-
         else:
             return (('#' * self.width + '\n') * self.height)
