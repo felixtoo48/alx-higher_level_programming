@@ -60,5 +60,10 @@ class Rectangle:
         """
         if self.width == 0 or self.height == 0:
             return ("")
-        else:
-            return (('#' * self.width + '\n') * self.height)
+
+        shape = []
+        for i in range(self.height):
+            [shape.append("#") for j in range(self.width)]
+            if i != self.height - 1:
+                shape.append("\n")
+        return (''.join(shape))
