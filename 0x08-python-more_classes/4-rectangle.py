@@ -69,4 +69,6 @@ class Rectangle:
         return (''.join(shape))
 
     def __repr__(self):
-        return repr("Rectangle({:d}, {:d})".format(self.width, self.height))
+        shape = "Rectangle(" + str(self.width) + ", "
+        shape += str(self.height) + ")"
+        return shape
