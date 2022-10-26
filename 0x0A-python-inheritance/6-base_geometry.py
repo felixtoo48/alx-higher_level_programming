@@ -6,7 +6,10 @@ to raise area of a base GeoMetry
 
 
 class BaseGeometry:
-
+    """
+    Methods:
+        area(self)
+    """
     def area(self):
         """ not implemented"""
         raise Exception("area() is not implemented")
