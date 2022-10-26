@@ -49,32 +49,32 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        return (self.width * self.height)
+        return (self.__width * self.__height)
 
     def perimeter(self):
-        if self.width == 0 or self.height == 0:
+        if self.__width == 0 or self.__height == 0:
             return 0
         else:
-            return (2 * (self.width + self.height))
+            return (2 * (self.__width + self.__height))
 
     def __str__(self):
         """ return printed representation of Rectangle
 
         Rectangle is printed with # character.
         """
-        if self.width == 0 or self.height == 0:
+        if self.__width == 0 or self.__height == 0:
             return ("")
 
         shape = []
-        for i in range(self.height):
-            [shape.append("#") for j in range(self.width)]
-            if i != self.height - 1:
+        for i in range(self.__height):
+            [shape.append(str(self.print_symbol)) for j in range(self.__width)]
+            if i != self.__height - 1:
                 shape.append("\n")
         return (''.join(shape))
 
     def __repr__(self):
-        shape = "Rectangle(" + str(self.width) + ", "
-        shape += str(self.height) + ")"
+        shape = "Rectangle(" + str(self.__width) + ", "
+        shape += str(self.__height) + ")"
         return shape
 
     def __del__(self):
