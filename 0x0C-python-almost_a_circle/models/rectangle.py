@@ -2,13 +2,32 @@
 """
 Module rectangle
 create a class rectangle that inherits from base
+Private instance attributes,
+each with its own public getter and setter
+call super class with id
+assign each argument to the right attribute
 """
 
 from models.base import Base
 
 
 class Rectangle(Base):
+    """
+    defines class Rectangle; inherits from class Base
+    Inherited Attributes:
+        id
+    Class Attributes:
+        __width          __height
+        __x              __y
+    Methods:
+        __init__(self, width, height, x=0, y=0, id=None):
+        width(self)      width(self, value)
+        height(self)     height(self, value)
+        x(self)          x(self, value)
+        y(self)          y(self, value)
+    """
     def __init__(self, width, height, x=0, y=0, id=None):
+        """ Initializing the rectangle"""
         self.width = width
         self.height = height
         self.x = x
@@ -27,7 +46,7 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
-    
+
     @property
     def width(self):
         """Get the width of the rectangle"""
@@ -66,5 +85,3 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
-
-
