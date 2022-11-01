@@ -94,6 +94,8 @@ class Rectangle(Base):
         """ return
 
         Rectangle printed with # character.
+        Updating class Rectangle
+        print # by  by taking care of x and y
         """
         [print("") for y in range(self.y)]
         for i in range(self.height):
