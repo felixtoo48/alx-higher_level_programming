@@ -47,3 +47,10 @@ class Square(Rectangle):
         """return [Square] (<id>) <x>/<y> - <size>"""
         return ("[{:s}] ({:d}) {:d}/{:d} - \
 {:d}".format(self.__class__.__name__, self.id, self.x, self.y, self.width))
+
+    def update(self, *args, **kwargs):
+        s = ["id", "size", "x", "y"]
+        for i in range(len(args)):
+            if i > len(s) - 1:
+                break
+            setattr(self, s[i], args[i])
