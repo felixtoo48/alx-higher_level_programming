@@ -95,8 +95,10 @@ class Rectangle(Base):
 
         Rectangle printed with # character.
         """
+        [print("") for y in range(self.y)]
         for i in range(self.height):
             for j in range(self.width):
+                [print("", end='') for x in range(self.x)]
                 print('#', end='')
             print()
 
