@@ -110,3 +110,14 @@ class Rectangle(Base):
 {:d}/{:d}".format(self.__class__.__name__,
                   self.id, self.__x, self.__y,
                   self.__width, self.__height)
+
+    def update(self, *args):
+        """
+        Updating class Rectangle
+        Assining an argument to each attribute
+        """
+        s = ["id", "width", "height", "x", "y"]
+        for i in range(len(args)):
+            if i > len(s) - 1:
+                break
+            setattr(self, s[i], args[i])
