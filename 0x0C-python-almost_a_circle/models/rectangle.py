@@ -111,13 +111,20 @@ class Rectangle(Base):
                   self.id, self.__x, self.__y,
                   self.__width, self.__height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
         Updating class Rectangle
         Assining an argument to each attribute
         """
         s = ["id", "width", "height", "x", "y"]
-        for i in range(len(args)):
-            if i > len(s) - 1:
-                break
-            setattr(self, s[i], args[i])
+        if args is not None or len(args) != 0:
+
+            for i in range(len(args)):
+                if i > len(s) - 1:
+                    break
+                setattr(self, s[i], args[i])
+        else:
+            for key, value in range(kwargs.items()):
+                if len(key, value) in kwargs.items() > len(s) - 1:
+                    break
+                setattr(self, s[key], kwargs[value])
