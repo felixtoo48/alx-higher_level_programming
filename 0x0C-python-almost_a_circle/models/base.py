@@ -44,11 +44,12 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        if list_objs is None and list_objs == 0:
-            with open(cls.__name + '.json', 'w', encode='utf-8') as f:
+        temp = []
+        if list_objs is None and len(list_objs) == 0:
+            with open(cls.__name__ + '.json', 'w', encode='utf-8') as f:
                 f.write(cls.to_json_string(temp))
         else:
             for v in list_objs:
                 temp.append(v.to_dictionary())
-            with open(cls.__name + '.json', 'w', encode='utf-8') as f:
+            with open(cls.__name__ + '.json', 'w', encoding='utf-8') as f:
                 f.write(cls.to_json_string(temp))
