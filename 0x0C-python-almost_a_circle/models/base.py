@@ -27,7 +27,14 @@ class Base:
             self.id = Base.__nb_objects
 
     def to_json_string(list_dictionaries):
-        """ json string representation of list of dictionaries"""
+        """Creates the JSON representation of a list of dictionaries.
+
+        Args:
+            list_dictionaries (list): A list of dictionaries.
+
+        Returns:
+            str: A JSON representation of the list of dictionaries.
+        """
         temp = []
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return str(temp)
