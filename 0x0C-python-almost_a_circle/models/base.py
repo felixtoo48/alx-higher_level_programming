@@ -44,6 +44,11 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """Saves a list of polygons to a file in JSON format.
+
+        Args:
+            list_objs (list): A list of polygons.
+        """
         temp = []
         if list_objs is None and len(list_objs) == 0:
             with open(cls.__name__ + '.json', 'w', encode='utf-8') as f:
