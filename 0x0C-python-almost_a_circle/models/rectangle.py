@@ -132,11 +132,3 @@ class Rectangle(Base):
         for i in a:
             temp[i] = getattr(self, i)
         return temp
-
-    def to_dictionary(self):
-        """ dictionary representation of the rectangle"""
-        temp = {}
-        a = ["id", "size", "x", "y"]
-        for i in a:
-            temp[i] = getattr(self, i)
-        return temp
