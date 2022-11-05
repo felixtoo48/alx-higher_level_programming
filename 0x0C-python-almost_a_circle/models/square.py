@@ -49,8 +49,15 @@ class Square(Rectangle):
 {:d}".format(self.__class__.__name__, self.id, self.x, self.y, self.width))
 
     def update(self, *args, **kwargs):
-        s = ["id", "size", "x", "y"]
-        for i in range(len(args)):
-            if i > len(s) - 1:
-                break
-            setattr(self, s[i], args[i])
+        """Updates the attributes of this polygon.
+        Args:
+            args (tuple): A tuple of non-keyword arguments.
+            kwargs (dict): A dictionary of keyword arguments.
+        """
+        attrs = ('id', 'size', 'x', 'y')
+        for key, val in zip(attrs, args):
+            setattr(self, key, val)
+        if (type(args) is None or len(args) == 0) and (type(kwargs) is dict):
+            for key, val in kwargs.items():
+                if key in attrs:
+                    setattr(self, key, val)
