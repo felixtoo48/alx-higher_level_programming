@@ -112,19 +112,15 @@ class Rectangle(Base):
                   self.__width, self.__height)
 
     def update(self, *args, **kwargs):
+        """Updates the attributes of this polygon.
+        Args:
+            args (tuple): A tuple of non-keyword arguments.
+            kwargs (dict): A dictionary of keyword arguments.
         """
-        Updating class Rectangle
-        Assining an argument to each attribute
-        """
-        s = ["id", "width", "height", "x", "y"]
-        if args is not None or len(args) != 0:
-
-            for i in range(len(args)):
-                if i > len(s) - 1:
-                    break
-                setattr(self, s[i], args[i])
-        else:
-            for key, value in range(kwargs.items()):
-                if len(key, value) in kwargs.items() > len(s) - 1:
-                    break
-                setattr(self, s[key], kwargs[value])
+        attrs = ('id', 'width', 'height', 'x', 'y')
+        for key, val in zip(attrs, args):
+            setattr(self, key, val)
+        if (type(args) is None or len(args) == 0) and (type(kwargs) is dict):
+            for key, val in kwargs.items():
+                if key in attrs:
+                    setattr(self, key, val)
