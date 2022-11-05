@@ -126,6 +126,7 @@ class Rectangle(Base):
                     setattr(self, key, val)
 
     def to_dictionary(self):
+        """ dictionary representation of the rectangle"""
         temp = {}
         a = ["id", "width", "height", "x", "y"]
         for i in a:
